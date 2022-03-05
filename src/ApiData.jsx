@@ -5,7 +5,7 @@ import { createContext, useEffect, useRef, useState, useContext } from "react"
 export const LocaleContext = createContext(null)
 
 export default function ApiData(props){
-    const url = "https://api.checkwx.com/metar/EDDF/decoded" 
+    const url = "https://api.checkwx.com/taf/EDDK" 
     const key = "?x-api-key=ec3b8ab3213f4ab785458b22e7" 
     const [resultApi, setResultApi] = useState("some data")
 

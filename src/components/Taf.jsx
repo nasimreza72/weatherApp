@@ -4,9 +4,9 @@ export default function Taf(){
     const [resultApi] = useLocaleContext()
 
     return(
-        <div>
+        <div className="taf">
             <p>Hi from Taf component</p>
-            <p>{resultApi.station}</p>
+            <p>{resultApi}</p>
         </div>
 
     )
