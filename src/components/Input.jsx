@@ -2,7 +2,7 @@ import { useRef } from "react"
 import { useLocaleContext } from "../ApiData.jsx"
 
 export default function Input(){
-    const [city, setCity] = useLocaleContext()
+    const [setCity] = useLocaleContext()
     const myInput = useRef()
     
     function handleSubmit(e){
@@ -10,9 +10,8 @@ export default function Input(){
         setCity(myInput.current.value)
     }
 
-
     return(
-        <div>
+        <div className="input-section">
             <p>Hi from input</p>
             <form onSubmit={handleSubmit}> 
             <input ref={myInput} type="text" />

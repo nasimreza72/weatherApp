@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 .App{
     width: 100vw;
     height: 100vh;
@@ -13,38 +12,44 @@
     text-align: center;
     min-height: 100vh;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
 }
-/* .input-field{ */
-    /* width: 64%;
-    height: 100%; */
-    /* margin: 25px;
-    display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center;
-    justify-content: center;
-} */
-
 .info-box{
-    width: 35%;
-    height: 100%;
-    /* filter: blur(8px); */
-    background-color: rgb(82,67,106);
-    background-color: rgba(0, 0, 0, .6);
-    margin-left:  auto;
+   
 }
-
+.api-div{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "input-section input-section taf"
+    "input-section input-section metar"
+}
 .taf{
-    width: 100%;
-    height: 50vh;
     padding: 30px;
-    /* margin-left:  auto; */
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    grid-area: taf;
+    background-color: rgb(82,67,106);
+    background-color: rgba(0, 0, 0, .6);
+}
+.metar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: metar;
+    background-color: rgb(82,67,106);
+    background-color: rgba(0, 0, 0, .6);
+}
+.input-section{
+    grid-area: input-section;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
