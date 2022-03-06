@@ -5,29 +5,47 @@ import { createContext, useEffect, useRef, useState, useContext } from "react"
 export const LocaleContext = createContext(null)
 
 export default function ApiData(props){
-    const url = "https://api.checkwx.com/taf/EDDK" 
+    const [city, setCity] = useState("EDDB")
+    const urlTaf = `https://api.checkwx.com/taf/${city}`
+    const urlMetar = `https://api.checkwx.com/metar/${city}` 
     const key = "?x-api-key=ec3b8ab3213f4ab785458b22e7" 
-    const [resultApi, setResultApi] = useState("some data")
+    const [resultTaf, setResultTaf] = useState("")
+    const [resultMetar, setResultMetar] = useState("")
+
+    // const myInput = useRef()
+
+    // function handleSubmit(e){
+    //     e.preventDefault()
+    //     setCity(myInput.current.value)
+    // }
 
     useEffect(()=>{
-
-        fetch(url + key)
+        fetch(urlTaf + key)
             .then(response => response.json())
-            .then(data => setResultApi(JSON.stringify(data, null, "  ")) )         
-
+            .then(data => setResultTaf(JSON.stringify(data, null, "  ")) ) 
     },[])
-
-    console.log(resultApi)
+    useEffect(()=>{
+        fetch(urlMetar + key)
+        .then(response => response.json())
+        .then(data => setResultMetar(JSON.stringify(data, null, "  ")) ) 
+    },[])
+    console.log(resultMetar);
+    console.log(resultTaf)
         return(
-            
-            <LocaleContext.Provider value= {[resultApi, setResultApi]}>
-                <p>Hi from Api</p>
-                {props.children}
-            </LocaleContext.Provider>
-
-         // <div>
-        //      <pre>{resultApi}</pre> 
-       // </div>
+            <div className="api-div">
+                {/* <div className="input-field">
+                    <form onSubmit={handleSubmit}>
+                        <input ref={myInput} type="text" />
+                        <button>Push</button>
+                    </form>
+                </div> */}
+                
+                <LocaleContext.Provider value= {[resultTaf, setResultTaf, city, setCity, resultMetar, setResultMetar]}>
+                
+                    {props.children}
+                
+                </LocaleContext.Provider>
+            </div>
             )
 }
 

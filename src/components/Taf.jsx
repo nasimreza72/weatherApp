@@ -1,12 +1,11 @@
-import { useLocaleContext } from "../ApiData";
+import { useLocaleContext } from "../ApiData.jsx";
 
 export default function Taf(){
-    const [resultApi] = useLocaleContext()
+    const [resultTaf] = useLocaleContext()
 
     return(
         <div className="taf">
-            <p>Hi from Taf component</p>
-            <p>{resultApi}</p>
+            <p>{resultTaf}</p>
         </div>
 
     )
