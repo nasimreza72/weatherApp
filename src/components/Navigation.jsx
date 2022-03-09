@@ -4,7 +4,7 @@ import Input from "./Input.jsx";
 function Navigation (){
 
     return(
-        <nav style={{backgroundColor: "rgb(82,67,106)", padding:"1.3em"}}>
+        <nav>
             <Input />
             <NavLink to="/main/weather">Forecast</NavLink>
             <NavLink to="/main/metar">METAR</NavLink>
