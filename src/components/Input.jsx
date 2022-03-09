@@ -1,8 +1,13 @@
 import { useState, useRef } from "react"
+import {useContext} from "react";
+import { userContext } from "../Context/Context.jsx";
 
 
-function Input(){
-    const [cityName, setCityName] = useState("Berlin")
+function Input(props){
+
+    const { setCityName} =useContext(userContext)
+
+    
     const input = useRef()
     
 

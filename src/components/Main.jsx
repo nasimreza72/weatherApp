@@ -7,7 +7,7 @@ import MetarTafDecoded from "./MetarTafDecoded.jsx"
 import Archive from "../components/Archive.jsx"
 import APIFetching from "./APIFetching.jsx";
 
-function Main(){
+function Main(props){
 
     return(
 
