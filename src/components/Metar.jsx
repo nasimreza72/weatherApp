@@ -1,11 +1,10 @@
-import { useLocaleContext } from "../ApiData";
 
-export default function Metar(){
-    const [resultMetar] = useLocaleContext()
+
+
+function Metar(){
 
     return(
-        <div className="metar">
-            <p>{resultMetar}</p>
-        </div>
+        <div>Metar</div>
     )
 }
+export default Metar
