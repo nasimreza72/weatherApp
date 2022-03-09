@@ -2,6 +2,7 @@ import "./App.css"
 import Navigation from "./components/Navigation.jsx"
 import Main from "./components/Main"
 
+
 function App(){
 
     return (

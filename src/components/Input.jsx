@@ -1,15 +1,27 @@
+import { useState, useRef } from "react"
 
 
 function Input(){
+    const [cityName, setCityName] = useState("Berlin")
+    const input = useRef()
+    
 
-    return(
+    const submitHandler = (e)=>{
+        e.preventDefault()
+        setCityName(input.current.value)
+        input.current.value = ""
+    }
+    
+    return (
+
         <div>
-                <p>Input</p>
-        <input>
-        
-        </input>
+            <form onSubmit={submitHandler}>
+                <input type="text" ref={input}   />
+                <button onClick={submitHandler}>Submit</button>
+            </form>
         </div>
-        
-    )
+        )
+
+
 }
 export default Input

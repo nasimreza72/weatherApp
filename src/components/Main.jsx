@@ -5,12 +5,16 @@ import Taf from "../components/Taf.jsx"
 import MetarTaf from "../components/MetarTaf.jsx"
 import MetarTafDecoded from "./MetarTafDecoded.jsx"
 import Archive from "../components/Archive.jsx"
+import APIFetching from "./APIFetching.jsx";
 
 function Main(){
 
     return(
+
         <main>
+            <APIFetching />
             <Routes>
+
                 <Route index element={<p>hi, it is a beginning!</p>}/>
                 <Route path="main/weather" element={<Weather />}/>
                 <Route path ="main/metar" element={<Metar/>}/>
