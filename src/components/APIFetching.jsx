@@ -1,19 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
+import {useContext} from "react";
+import { userContext } from "../Context/Context.jsx";
 
 
-export default function APIFetching(){
+export default function APIFetching(props){
 
+  const { celsius, setCelsius, windSpeed, setWindSpeed, humidity, setHumidity, clouds, setClouds, location, setLocation, cityName, setCityName, latitude, setLatitude, longitude, setLongitude } = useContext(userContext)
     
-  const [celsius, setCelsius] = useState([]);
-  const [windSpeed, setWindSpeed] = useState([]);
-  const [humidity, setHumidity] = useState([]);
-  const [clouds, setClouds] = useState([]);
-  const [location, setLocation] = useState([]);
-  const [cityName, setCityName] = useState("Dubai");
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
-  const myInput = useRef();
   const params = {
     access_key: "3759bf50e5fbe59226c42863dfaff27a",
     query: cityName,
@@ -44,7 +38,7 @@ export default function APIFetching(){
         setHumidity(result.data[0].humidity.percent);
         setClouds(result.data[0].clouds[0].text);
         setLocation(result.data[0].station.location);
-        // console.log(result);
+        console.log(result);
       })
       .catch((error) => console.error(error));
   }, [longitude]);

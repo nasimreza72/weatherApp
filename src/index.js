@@ -1,11 +1,15 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import { BrowserRouter } from "react-router-dom"
-import App from "./App.jsx"
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App.jsx";
+import UserContextProvider from "./Context/Context.jsx";
+
 
 ReactDOM.render(
-        <BrowserRouter>
-                <App />
-        </BrowserRouter>,
-    document.getElementById("root")
- )
+  <UserContextProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </UserContextProvider>,
+  document.getElementById("root")
+);

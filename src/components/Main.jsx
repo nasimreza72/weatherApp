@@ -14,8 +14,6 @@ function Main(){
         <main>
             <APIFetching />
             <Routes>
-
-                <Route index element={<p>hi, it is a beginning!</p>}/>
                 <Route path="main/weather" element={<Weather />}/>
                 <Route path ="main/metar" element={<Metar/>}/>
                 <Route path ="main/taf" element={<Taf/>}/>
