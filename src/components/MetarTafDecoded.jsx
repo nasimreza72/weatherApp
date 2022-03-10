@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { userContext } from "../Context/Context.jsx";
 
 function dataAval(link){
-    return (link?link:"empty")
+   decoded.filter(link)
 }
 
 function MetarTafDecoded(){
@@ -13,17 +13,16 @@ function MetarTafDecoded(){
         return(
             <div>
                 {location}<hr/>
-                {/* <pre>{JSON.stringify(decoded,0,"-")}</pre> */}
-                {dataAval(decoded.data[0].forecast[0].clouds[0].text)}<br/>
-                {dataAval(decoded.data[0].forecast[0].clouds[0].text)}<br/>
-                {dataAval(decoded.data[0].forecast[0].conditions[0].text)}<br/>
+                <pre>{JSON.stringify(decoded,0,"-")}</pre>
+                {/* {dataAval(decoded.data[0].forecast[0].clouds[0].text)}<br/> */}
+                {/* {dataAval(decoded.data[0].forecast[0].conditions[0].text)}<br/>
                 {dataAval(decoded.data[0].forecast[0].timestamp.from)}<br/>
                 {dataAval(decoded.data[0].forecast[0].timestamp.to)}<br/>
                 visibility: {dataAval(decoded.data[0].forecast[0].visibility.meters)}<br/>
-                {dataAval(decoded.data[0].forecast[0].wind.degrees)} {dataAval(decoded.data[0].forecast[0].wind.speed_kts)}<br/>
+                {dataAval(decoded.data[0].forecast[0].wind.degrees)} {dataAval(decoded.data[0].forecast[0].wind.speed_kts)}<br/> */}
             </div>
         )
-    }
+    }else{return<p>LOADING...</p>}
     
 }
 export default MetarTafDecoded
