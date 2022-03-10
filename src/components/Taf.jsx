@@ -3,11 +3,12 @@ import { userContext } from "../Context/Context.jsx";
 
 
 function Taf(){
-    const {location} = useContext(userContext)
+    const {location, taf} = useContext(userContext)
 
     return(
         <div>
-            {location}
+            {location}<hr/>
+            {taf}
         </div>
     )
 }
