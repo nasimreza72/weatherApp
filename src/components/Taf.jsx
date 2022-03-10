@@ -1,11 +1,13 @@
-
+import { useContext } from "react";
+import { userContext } from "../Context/Context.jsx";
 
 
 function Taf(){
+    const {location} = useContext(userContext)
 
     return(
         <div>
-            Div
+            {location}
         </div>
     )
 }

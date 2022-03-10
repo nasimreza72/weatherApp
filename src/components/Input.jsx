@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useRef } from "react"
 import {useContext} from "react";
 import { userContext } from "../Context/Context.jsx";
 
@@ -21,8 +21,8 @@ function Input(props){
 
         <div>
             <form onSubmit={submitHandler}>
-                <input type="text" ref={input}   />
-                <button onClick={submitHandler}>Submit</button>
+                <input placeholder="Chose City" type="text" ref={input}   />
+                <button onClick={submitHandler}>⇨</button>
             </form>
         </div>
         )

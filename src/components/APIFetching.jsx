@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import {useContext} from "react";
 import { userContext } from "../Context/Context.jsx";
@@ -42,18 +42,8 @@ export default function APIFetching(props){
       })
       .catch((error) => console.error(error));
   }, [longitude]);
-  return (
-    <div className="main">
-      <h1>
-        Temperature: <span>{celsius}°</span>celsius
-      </h1>
-      <h1>Wind speed: {windSpeed}kph</h1>
-      <h1>Humidity: {humidity}%</h1>
-      <h1>Clouds: {clouds}</h1>
-      <h1>{location}</h1>
-    </div>
-  );
 }
+
 
     
 

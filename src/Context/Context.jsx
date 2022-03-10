@@ -10,7 +10,7 @@ export default function UserContextProvider (props) {
     const [humidity, setHumidity] = useState([]);
     const [clouds, setClouds] = useState([]);
     const [location, setLocation] = useState([]);
-    const [cityName, setCityName] = useState("Dubai");
+    const [cityName, setCityName] = useState("Berlin");
     const [latitude, setLatitude] = useState("");
     const [longitude, setLongitude] = useState("");
 

@@ -9,11 +9,12 @@ import APIFetching from "./APIFetching.jsx";
 
 function Main(props){
 
+    APIFetching()
     return(
 
         <main>
-            <APIFetching />
             <Routes>
+                <Route path="/" element={<Weather/>}/>
                 <Route path="main/weather" element={<Weather />}/>
                 <Route path ="main/metar" element={<Metar/>}/>
                 <Route path ="main/taf" element={<Taf/>}/>
