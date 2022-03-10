@@ -15,13 +15,16 @@ export default function UserContextProvider (props) {
     const [longitude, setLongitude] = useState("");
     const [raw_text,setRaw_text]=useState("")
     const [taf, setTaf]=useState("")
+    const [decoded, setDecoded]=useState({})
+    const [loaded,setLoaded]=useState(false)
 
 
-    // all new state will go up and pass variable and function in the contextValue
+    //all new state will go up and pass variable and function in the contextValue
 
 
 
-    const contextValue = { celsius, setCelsius, windSpeed, setWindSpeed, humidity, setHumidity, clouds, setClouds, location, setLocation, cityName, setCityName, latitude, setLatitude, longitude, setLongitude, raw_text,setRaw_text, taf, setTaf }
+    const contextValue = { celsius, setCelsius, windSpeed, setWindSpeed, humidity, setHumidity, clouds, setClouds, location, setLocation, cityName, setCityName, latitude, setLatitude, longitude, setLongitude, raw_text,setRaw_text, taf, setTaf, decoded, setDecoded, loaded, setLoaded 
+    }
 
     return(
         <userContext.Provider value={contextValue}>
