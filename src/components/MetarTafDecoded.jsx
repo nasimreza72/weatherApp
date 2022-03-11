@@ -1,14 +1,19 @@
 import { useContext } from "react";
 import { userContext } from "../Context/Context.jsx";
 
-function MetarTafDecoded(){
-    const {location, decoded, loaded}=useContext(userContext)
-    
-    if(loaded===true){
-        console.log(decoded.data[0]);
-        return(
-            <div>
-                {location}<hr/>
+function MetarTafDecoded() {
+  const { decoded, loaded } = useContext(userContext);
+
+  if (loaded === true) {
+    console.log(decoded.data[0]);
+    return (
+      <div>
+          
+        <pre>{JSON.stringify(decoded, 0, " ")}</pre>
+
+        {/* Map through the object to fix missing Api format or same name objects all the data */}
+
+        {/* {location}<hr/>
                 {decoded.data?.map(dataPoint=>(
                     <div><h2>DATA</h2>
                     {dataPoint.forecast?.map(forecastPoint=>(
@@ -24,17 +29,11 @@ function MetarTafDecoded(){
                         </div>
                     ))}
                     </div>
-                ))}
-                <pre>{JSON.stringify(decoded,0," -")}</pre>
-                {/* {dataAval(decoded.data[0].forecast[0].clouds[0].text)}<br/> */}
-                {/* {dataAval(decoded.data[0].forecast[0].conditions[0].text)}<br/>
-                {dataAval(decoded.data[0].forecast[0].timestamp.from)}<br/>
-                {dataAval(decoded.data[0].forecast[0].timestamp.to)}<br/>
-                visibility: {dataAval(decoded.data[0].forecast[0].visibility.meters)}<br/>
-                {dataAval(decoded.data[0].forecast[0].wind.degrees)} {dataAval(decoded.data[0].forecast[0].wind.speed_kts)}<br/> */}
-            </div>
-        )
-    }else{return<p>LOADING...</p>}
-    
+                ))} */}
+      </div>
+    );
+  } else {
+    return <p>LOADING...</p>;
+  }
 }
-export default MetarTafDecoded
+export default MetarTafDecoded;

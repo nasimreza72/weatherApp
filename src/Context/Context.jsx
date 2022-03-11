@@ -17,13 +17,13 @@ export default function UserContextProvider (props) {
     const [taf, setTaf]=useState("")
     const [decoded, setDecoded]=useState({})
     const [loaded,setLoaded]=useState(false)
-
+    const [ ICAO, setICAO ] = useState ("EDDB")
+    const [ sunRise, setSunRise] = useState([])
+    const [ sunSet, setSunSet] = useState([])
 
     //all new state will go up and pass variable and function in the contextValue
 
-
-
-    const contextValue = { celsius, setCelsius, windSpeed, setWindSpeed, humidity, setHumidity, clouds, setClouds, location, setLocation, cityName, setCityName, latitude, setLatitude, longitude, setLongitude, raw_text,setRaw_text, taf, setTaf, decoded, setDecoded, loaded, setLoaded 
+    const contextValue = { celsius, setCelsius, windSpeed, setWindSpeed, humidity, setHumidity, clouds, setClouds, location, setLocation, cityName, setCityName, latitude, setLatitude, longitude, setLongitude, raw_text,setRaw_text, taf, setTaf, decoded, setDecoded, loaded, setLoaded , ICAO, setICAO, sunRise, setSunRise, sunSet, setSunSet
     }
 
     return(
