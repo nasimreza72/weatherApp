@@ -8,11 +8,7 @@ function MetarTafDecoded() {
     console.log(decoded.data[0]);
     return (
       <div>
-          
-        <pre>{JSON.stringify(decoded, 0, " ")}</pre>
-
         {/* Map through the object to fix missing Api format or same name objects all the data */}
-
         {/* {location}<hr/>
                 {decoded.data?.map(dataPoint=>(
                     <div><h2>DATA</h2>
@@ -29,7 +25,23 @@ function MetarTafDecoded() {
                         </div>
                     ))}
                     </div>
-                ))} */}
+                ))}  */}
+        {(decoded.data[0].forecast[0].conditions)?(decoded.data[0].forecast[0].conditions)[0].text : ""}
+
+        
+        {/* <br />
+        {decoded.data[0].forecast[0].timestamp.from}
+        <br />
+        {decoded.data[0].forecast[0].timestamp.to?||""} */}
+        {/* <br />
+        visibility: {decoded.data[0].forecast[0].visibility.meters}
+        <br />
+        {decoded.data[0].forecast[0].wind.degrees}{" "}
+        {decoded.data[0].forecast[0].wind.speed_kts}
+ */}
+
+        <pre>{JSON.stringify(decoded, 0, " ")}</pre>
+
       </div>
     );
   } else {
