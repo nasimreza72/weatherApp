@@ -1,0 +1,16 @@
+.weather{
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1rem;
+    padding-top: 30px;
+
+    .graph-container{
+        color: grey;
+    }
+
+
+
+}
