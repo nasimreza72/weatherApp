@@ -8,7 +8,7 @@ function MetarTaf(){
 
     return(
         <div>
-            {location}<hr/>
+             <span style={{fontSize:'1.5rem', fontWeight: 'bold'}}>{location}</span> <hr/>
             METAR: {raw_text}<br/>
             TAF: {taf}
         </div>

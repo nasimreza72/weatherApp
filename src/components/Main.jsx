@@ -6,6 +6,8 @@ import MetarTaf from "../components/MetarTaf.jsx"
 import MetarTafDecoded from "./MetarTafDecoded.jsx"
 import Archive from "../components/Archive.jsx"
 import APIFetching from "./APIFetching.jsx";
+import Input from "./Input.jsx";
+
 
 function Main(props){
 
@@ -13,6 +15,7 @@ function Main(props){
     return(
 
         <main>
+            <Input />
             <Routes>
                 <Route path="/" element={<Weather/>}/>
                 <Route path="main/weather" element={<Weather />}/>

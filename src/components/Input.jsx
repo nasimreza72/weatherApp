@@ -19,10 +19,10 @@ function Input(props){
     
     return (
 
-        <div>
+        <div className="inputButton">
             <form onSubmit={submitHandler}>
-                <input placeholder="Chose City" type="text" ref={input}   />
-                <button onClick={submitHandler}>⇨</button>
+                <input placeholder=" search city..." type="text" ref={input}   />
+                <button onClick={submitHandler}>search</button>
             </form>
         </div>
         )

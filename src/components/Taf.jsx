@@ -7,7 +7,7 @@ function Taf(){
 
     return(
         <div>
-            {location}<hr/>
+            <span style={{fontSize:'1.5rem', fontWeight: 'bold'}}>{location}</span> <hr/>
             {taf}
         </div>
     )
